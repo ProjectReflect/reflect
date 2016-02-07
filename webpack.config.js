@@ -17,6 +17,7 @@ const basePlugins = [
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
   }),
   new HtmlWebpackPlugin({
+    filename: 'app.html',
     template: './index.html',
     inject: 'body',
   }),
@@ -41,16 +42,12 @@ const plugins = basePlugins
   .concat(process.env.NODE_ENV === 'development' ? devPlugins : []);
 
 module.exports = {
-  entry: {
-    app: getEntrySources(['./src/app.js']),
-  },
+  entry: ['./src/app.js'],
 
   output: {
     path: path.join(__dirname, 'public'),
-    filename: '[name].[hash].js',
+    filename: 'bundle-[hash].js',
     publicPath: '/',
-    sourceMapFilename: '[name].[hash].js.map',
-    chunkFilename: '[id].chunk.js',
   },
 
   devtool: 'source-map',
