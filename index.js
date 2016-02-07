@@ -20,7 +20,7 @@ app.use('/api', (req, res, next) => {
 
 app.use(serveWebpackClient({
   distPath: path.join(__dirname, 'public'),
-  indexFileName: 'index.html',
+  indexFileName: 'app.html',
   webpackConfig: require('./webpack.config'),
 }));
 
