@@ -1,5 +1,6 @@
 import React from 'react';
 import Clock from '../components/Clock';
+import Weather from '../components/Weather';
 
 class HomeContainer extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class HomeContainer extends React.Component {
     return (
       <div>
         <Clock {...props}/>
+        <Weather {...props}/>
       </div>
     );
   }
