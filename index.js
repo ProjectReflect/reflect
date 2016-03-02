@@ -9,6 +9,7 @@ const API_URL = process.env.API_URL || 'https://project-reflect-api.herokuapp.co
 
 const proxyOptions = {
   target: API_URL,
+  changeOrigin: true,
 };
 
 const proxy = httpProxy.createProxyServer(proxyOptions);
