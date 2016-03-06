@@ -1,6 +1,7 @@
 import React from 'react';
 import Clock from '../components/Clock';
 import Weather from '../components/Weather';
+import News from '../components/News';
 
 class HomeContainer extends React.Component {
   constructor(props) {
@@ -11,8 +12,13 @@ class HomeContainer extends React.Component {
     const { props } = this;
     return (
       <div>
-        <Clock {...props}/>
-        <Weather {...props}/>
+        <div>
+          <Clock {...props}/>
+        </div>
+        <div style={{width:500}}>
+          <Weather {...props}/>
+          <News {...props}/>
+        </div>
       </div>
     );
   }
